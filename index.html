@@ -1,302 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Poetry</title>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" 
-integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
-
-<style>
-body {
-    background: #f8f4f2;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-}
-
-/* HEADER */
-.custom-header {
-    background: linear-gradient(135deg,#a18cd1,#fbc2eb);
-     background-image: url('salutitude.jpg');
-    background-size: cover;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 80px 20px;
-    border-radius: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.custom-header h1 {
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.custom-header p {
-    font-style: italic;
-    font-size: 1.1rem;
-}
-
-/* SEARCH + BUTTONS */
-.input-group input {
-    border-radius: 25px 0 0 25px;
-    border: 2px solid #a18cd1;
-    padding-left: 20px;
-}
-
-.input-group button {
-    border-radius: 0 25px 25px 0;
-    background: #a18cd1;
-    color: white;
-    transition: 0.3s;
-}
-
-.input-group button:hover {
-    background: #fbc2eb;
-    color: #333;
-}
-
-.btn-custom {
-    border-radius: 25px;
-    padding: 6px 20px;
-    border: 2px solid #a18cd1;
-    transition: 0.3s;
-}
-
-.btn-custom:hover {
-    background: #a18cd1;
-    color: white;
-}
-
-
-.sidebar-menu {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.sidebar-link {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    border-radius: 10px;
-    margin-bottom: 6px;
-    transition: 0.3s;
-}
-
-.sidebar-link:hover {
-    background: #a18cd1;
-    color: white;
-}
-
-
-.poem-card {
-    
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.poem-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.poem-title {
-    color: #a18cd1;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.poem-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555;
-    font-style: italic;
-}
-
-
-footer {
-    background: linear-gradient(135deg,#a18cd1,#fbc2eb);
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 50px;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-}
-
-footer h5 {
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-footer p {
-    font-size: 0.85rem;
-    opacity: 0.9;
-}
-</style>
-</head>
-
-<body>
-<div class="container py-4">
-
-<header class="custom-header">
-    <h1>WELCOME INSIDE YOUR THOUGHTS</h1>
-    <p>Change the way you think to have a happy and positive life.</p>
-</header>
-
-<!-- Search + Buttons -->
-<div class="row mb-4">
-    <div class="col-md-6 mb-3">
-        <div class="input-group">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search poem...">
-            <button class="btn" onclick="searchPoem()">Search</button>
-        </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-    <div class="col-md-6 text-md-end text-center">
-        <button class="btn btn-custom">Meditate</button>
-        <button class="btn btn-custom mx-1">Explore</button>
-        <button class="btn btn-custom">About</button>
-    </div>
-</div>
-
-<div class="row">
-   
-    <div class="col-lg-3 mb-4">
-        <div class="sidebar-menu">
-            <h5 class="text-center mb-3">CATEGORIES</h5>
-            <a href="#" class="sidebar-link">Self Love</a>
-            <a href="#" class="sidebar-link">Overthinking</a>
-            <a href="#" class="sidebar-link">Inner Calm</a>
-            <a href="#" class="sidebar-link">Letting Go</a>
-            <a href="#" class="sidebar-link">Move On</a>
-            <a href="#" class="sidebar-link">Mirror of My Soul</a>
-            <a href="#" class="sidebar-link">Whispers Within</a>
-            <a href="#" class="sidebar-link">Blooming from Within</a>
-            <a href="#" class="sidebar-link">The Gentle Voice</a>
-            <a href="#" class="sidebar-link">Moments of Me</a>
-            <a href="#" class="sidebar-link">A Quiet Strength</a>
-            <a href="#" class="sidebar-link">Tender Reflections</a>
-            <a href="#" class="sidebar-link">Finding Home in Myself</a>
-             
-
-    
-        </div>
-    </div>
-
-    
-<div class="col-lg-9">
-    <div class="row g-4 justify-content-center" id="poemContainer">
-        <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3 text-center">Self Love</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                    I am learning to be gentle <br>
-                    With the person in the mirror. <br>
-                    To speak in softer words, <br>
-                    To silence my own fear. <br>
-                    I am not perfect <br>
-                    And I don’t need to be. <br>
-                    Every scar, every flaw <br>
-                    Is still a part of me. 💙
-                </p>
-            </div>
-        </div>
-
-         <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3 text-center">   Blooming from Within</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                 
-                    I am learning to speak softly, <br>
-                    To the quiet voice inside. <br>
-                    Each scar tells a story,<br>
-                    Each flaw, a lesson to guide.<br><br>
-
-                    I do not need perfection,<br>
-                    Nor the world’s applause.<br>
-                    For the love I seek outside<br>
-                    Begins with my own heart’s cause.<br><br>
-
-                    Today I choose patience,<br>
-                    Tomorrow, kindness too.<br>
-                    The longest journey I’ll travel<br>
-                    Is the one back to me and you. 💛
-                </p>
-            </div>
-        </div>
-
-        <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3">Overthinking</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                    Chasing shadows that aren’t there. <br>
-                    Questions multiply like whispers, <br>
-                    Answers vanish into thin air. <br> <br>
-
-                    I try to catch each worry, <br>
-                    But they slip through my hands. <br>
-                    The more I chase the future, <br>
-                    The less I understand today’s plans. <br> <br>
-
-                    So I pause, take a breath, <br>
-                    Let the noise softly fade. <br>
-                    In the quiet, I find clarity, <br>
-                    And peace I almost mislaid. 🌿
-                                    </p>
-            </div>
-        </div>
-
-        <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3">Inner Calm</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                    Peace begins when you choose silence over noise. <br>
-                    Breathe in the quiet,<br>
-                    Let the world drift away.<br>
-                    Softly, the heart listens,<br>
-                    To what words cannot say.<br><br>
-
-                    Stillness is a gentle friend,<br>
-                    A light that warms the soul.<br>
-                    In the hush of simple moments,<br>
-                    We find again our whole. 🌿<br><br>
-
-                    Let go of racing thoughts,<br>
-                    Release the weight of the day.<br>
-                    Let the mind float like clouds,<br>
-                    Softly, gently, it drifts away.<br><br>
-
-                    Embrace the peace within,<br>
-                    A calm that never fades.<br>
-                    In this space of quiet wonder,<br>
-                    Our spirit softly wades.<br><br>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<footer>
-    <div class="container p-4 mb-4">
-        <h5>Quellene Faith D. Binggoy</h5>
-     
-    </div>
-</footer>
-
-</div>
-</body>
-</html>
+  </div>
+</nav>
