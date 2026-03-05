@@ -1,338 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Poetry</title>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" 
-integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
-
-<style>
-body {
-    background: #f8f4f2;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-}
-
-/* HEADER */
-.custom-header {
-    background: linear-gradient(135deg,#a18cd1,#fbc2eb);
-     background-image: url('salutitude.jpg');
-    background-size: cover;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.custom-header h1 {
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.custom-header p {
-    font-style: italic;
-    font-size: 1.1rem;
-}
-
-/* SEARCH + BUTTONS */
-.input-group input {
-    border-radius: 25px 0 0 25px;
-    border: 2px solid #a18cd1;
-    padding-left: 20px;
-}
-
-.input-group button {
-    border-radius: 0 25px 25px 0;
-    background: #a18cd1;
-    color: white;
-    transition: 0.3s;
-}
-
-.input-group button:hover {
-    background: #fbc2eb;
-    color: #333;
-}
-
-.btn-custom {
-    border-radius: 25px;
-    padding: 6px 20px;
-    border: 2px solid #a18cd1;
-    transition: 0.3s;
-}
-
-.btn-custom:hover {
-    background: #a18cd1;
-    color: white;
-}
-
-
-.sidebar-menu {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.sidebar-link {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    border-radius: 10px;
-    margin-bottom: 6px;
-    transition: 0.3s;
-}
-
-.sidebar-link:hover {
-    background: #a18cd1;
-    color: white;
-}
-
-
-.poem-card {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    <style>
+        :root {
+            --book-cream: #f8f9fa;
+            --poetry-dark: #2c3e50;
+            --accent-soft: #4ca1af;
+        }
 
-.poem-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
+        body { 
+            background-color: var(--book-cream); 
+            color: #34495e;
+            font-family: 'Georgia', serif;
+        }
 
-.poem-title {
-    color: #a18cd1;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
+       
+        .navbar { background: #fff !important; border-bottom: 1px solid #eee; }
 
-.poem-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555;
-    font-style: italic;
-}
+        .sidebar-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
 
+        .category-link {
+            text-decoration: none;
+            color: #555;
+            transition: 0.3s;
+            display: block;
+            padding: 8px 0;
+        }
 
-footer {
-    background: linear-gradient(135deg,#a18cd1,#fbc2eb);
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 50px;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-}
+        .category-link:hover {
+            color: var(--accent-soft);
+            padding-left: 5px;
+            font-weight: bold;
+        }
 
-footer h5 {
-    font-weight: 600;
-    margin-bottom: 5px;
-}
+        /* Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+        }
 
-footer p {
-    font-size: 0.85rem;
-    opacity: 0.9;
-}
-</style>
+        /* Poetry Card */
+        .book-card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            height: 100%;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .book-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        }
+
+        .book-img {
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn-custom {
+            background-color: var(--poetry-dark);
+            color: white;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-custom:hover { background-color: var(--accent-soft); color: white; }
+    </style>
 </head>
-
 <body>
-<div class="container py-4">
-
-<header class="custom-header sticky-top">
-    <h1>WELCOME INSIDE YOUR THOUGHTS</h1>
-    <p>Change the way you think to have a happy and positive life.</p>
-</header>
-
-<!-- Search + Buttons -->
-<div class="row mb-4">
-    <div class="col-md-6 mb-3">
-        <div class="input-group">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search poem...">
-            <button class="btn" onclick="searchPoem()">Search</button>
-        </div>
-    </div>
-    <div class="col-md-6 text-md-end text-center sticky-top">
-        <button class="btn btn-custom">Meditate</button>
-        <button class="btn btn-custom mx-1">Explore</button>
-        <button class="btn btn-custom">About</button>
-    </div>
-</div>
-
-<div class="row">
-   
-    <div class="col-lg-3 mb-4">
-        <div class="sidebar-menu">
-            <h5 class="text-center mb-3">CATEGORIES</h5>
-            <a href="#" class="sidebar-link">Self Love</a>
-            <a href="#" class="sidebar-link">Overthinking</a>
-            <a href="#" class="sidebar-link">Inner Calm</a>
-            <a href="#" class="sidebar-link">Letting Go</a>
-            <a href="#" class="sidebar-link">Move On</a>
-            <a href="#" class="sidebar-link">Mirror of My Soul</a>
-            <a href="#" class="sidebar-link">Whispers Within</a>
-            <a href="#" class="sidebar-link">Blooming from Within</a>
-            <a href="#" class="sidebar-link">The Gentle Voice</a>
-            <a href="#" class="sidebar-link">Moments of Me</a>
-            <a href="#" class="sidebar-link">A Quiet Strength</a>
-            <a href="#" class="sidebar-link">Tender Reflections</a>
-            <a href="#" class="sidebar-link">Finding Home in Myself</a>
-        </div>
-    </div>
-
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="visually-hidden">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
-    
-<div class="col-lg-9">
-    <div class="row g-4 justify-content-center" id="poemContainer">
-        <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3 text-center">Self Love</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                    I am learning to be gentle <br>
-                    With the person in the mirror. <br>
-                    To speak in softer words, <br>
-                    To silence my own fear. <br>
-                    I am not perfect <br>
-                    And I don’t need to be. <br>
-                    Every scar, every flaw <br>
-                    Is still a part of me. 💙
-                </p>
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--poetry-dark);">
+                <i class="bi bi-feather me-2"></i>QUERIKIM WORLD
+            </a>
+            <div class="d-flex">
+                <input class="form-control me-2 rounded-pill shadow-sm" type="search" placeholder="Search ...">
             </div>
         </div>
+    </nav>
 
-         <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3 text-center">   Blooming from Within</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                 
-                    I am learning to speak softly, <br>
-                    To the quiet voice inside. <br>
-                    Each scar tells a story,<br>
-                    Each flaw, a lesson to guide.<br><br>
+    <div class="container my-5">
+        <div class="row g-4">
+            
+            <aside class="col-lg-3">
+                <div class="sidebar-card">
+                    <h6 class="fw-bold mb-3 text-muted text-uppercase" style="letter-spacing: 1px;">Quellene Collection</h6>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="category-link border-0"><i class="bi bi-heart me-2"></i> Love & Affection</a>
+                        <a href="#" class="category-link border-0"><i class="bi bi-cloud-rain me-2"></i> Sorrow</a>
+                        <a href="#" class="category-link border-0"><i class="bi bi-sun me-2"></i> Hope & Dreams</a>
+                        <a href="#" class="category-link border-0"><i class="bi bi-moon-stars me-2"></i> Shadows</a>
+                        <a href="#" class="category-link border-0"><i class="bi bi-journal-text me-2"></i> Free Verse</a>
+                    </div>
+                </div>
+            </aside>
 
-                    I do not need perfection,<br>
-                    Nor the world’s applause.<br>
-                    For the love I seek outside<br>
-                    Begins with my own heart’s cause.<br><br>
+            <main class="col-lg-9">
+                
+                <section class="promo-banner mb-5 shadow-sm">
+                    <h1 class="fw-bold mb-2">Echoes of Silence</h1>
+                    <p class="mb-4 text-white-50">A personal digital anthology curated for the wandering soul.</p>
+                    <a href="#" class="btn btn-light rounded-pill px-4 fw-bold">kim's</a>
+                    <a href="#" class="btn btn-light rounded-pill px-4 fw-bold">Richine's</a>
+                </section>
 
-                    Today I choose patience,<br>
-                    Tomorrow, kindness too.<br>
-                    The longest journey I’ll travel<br>
-                    Is the one back to me and you. 💛
-                </p>
-            </div>
+                <h4 class="fw-bold mb-4">Latest Entries</h4>
+
+                <div class="row g-4">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="book-card text-center d-flex flex-column">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80" class="book-img w-100" alt="Poem Cover">
+                            <h6 class="fw-bold mb-1">Between the Lines</h6>
+                            <p class="small text-muted mb-2">by Lualhati Bautista</p>
+                            <p class="small fst-italic text-secondary mb-3 px-1">"In every pause of the pen, there live words..."</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn-custom">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="book-card text-center d-flex flex-column">
+                           <img src="https://images.unsplash.com/photo-1474932430478-367dbb6832c1?auto=format&fit=crop&w=400&q=80" class="book-img w-100" alt="Poem">
+                            <h6 class="fw-bold mb-1">Voice of the East</h6>
+                            <h6 class="fw-bold mb-1">Voice of the East</h6>
+                            <p class="small text-muted mb-2">by Juan Dela Cruz</p>
+                            <p class="small fst-italic text-secondary mb-3 px-1">"I hear the whisper of the monsoon wind..."</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn-custom">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="book-card text-center d-flex flex-column">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" class="book-img w-100" alt="Poem Cover">
+                            <h6 class="fw-bold mb-1">The Last Thread</h6>
+                            <p class="small text-muted mb-2">by Maria Clara</p>
+                            <p class="small fst-italic text-secondary mb-3 px-1">"Even the thinnest thread has strength..."</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn-custom">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </main>
         </div>
+        <!-- add di ang inyo -->
+    </div>
 
-        <div class="col-md-4 d-flex poem-item">
-            <div class="poem-card flex-fill text-center p-4">
-                <div class="card-accent mx-auto mb-3" style="width:60px; height:5px; background:#a18cd1; border-radius:10px;"></div>
-                <h5 class="poem-title mb-3">Overthinking</h5>
-                <p class="poem-text" style="color:#555; font-style:italic;">
-                    Chasing shadows that aren’t there. <br>
-                    Questions multiply like whispers, <br>
-                    Answers vanish into thin air. <br> <br>
-
-                    I try to catch each worry, <br>
-                    But they slip through my hands. <br>
-                    The more I chase the future, <br>
-                    The less I understand today’s plans. <br> <br>
-
-                    So I pause, take a breath, <br>
-                    Let the noise softly fade. <br>
-                    In the quiet, I find clarity, <br>
-                    And peace I almost mislaid. 🌿
-                                    </p>
-            </div>
+    <footer class="bg-white py-4 mt-5 border-top">
+        <div class="container text-center">
+            <p class="text-muted small mb-0">&copy; QUELLENE, KIM & RICHINE. Collaboration😂😂.</p>
         </div>
-    </div>
-</div>
-</div>
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Horizontal Menu
-  </button>
-  
-  <ul class="dropdown-menu d-flex flex-row align-items-center p-2" style="min-width: max-content;">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else</a></li>
-    
-    <li><div class="vr mx-2 h-100" style="min-height: 20px;"></div></li>
-    
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
+    </footer>
 
 
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">PINK <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div></th>
-      <th scope="col">RED <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div></th>
-      <th scope="col">BLUE <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div></th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>KIM</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>FAITH</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>RECHINE</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
-  </tbody>
-</table>
-<footer>
-
-    <div class="container p-4 mb-4">
-        <h5>Quellene Faith D. Binggoy</h5>
-     
-    </div>
-</footer>
-
-</div>
 </body>
 </html>
-
-
 
